@@ -4,14 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Mahasiswa extends Model
+class mahasiswa extends Model
 {
-    protected $table	='mahasiswa';
-    protected $fillable =['user_id', 'tgl_lahir', 'telepon', 'alamat', 'gender', 'foto'];
-    public $timestamp	= false;
+    protected $table = 'mahasiswa';
+    protected $fillable = ['user_id','npm','tgl_lahir','tempat_lahir','telepon','alamat','gender'];
 
     public function user()
     {
-    	return $this->belongsTo(User::class, 'user_id', 'id');
+        return $this->belongsTo(user::class, 'user_id', 'id');
     }
 }
